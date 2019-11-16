@@ -2,7 +2,6 @@
   "name": "generator-gaia",
   "version": "1.0.0",
   "description": "Yeaman generator for gaia",
-  "main": "src/index.js",
   "scripts": {
     "test": "NODE_DEBUG=generator-gaia nyc ava --timeout=10s --verbose",
     "test:dev": "NODE_DEBUG=generator-gaia nyc ava --timeout=10s --verbose && npm run report:dev",
@@ -14,14 +13,18 @@
     "report:open": "open coverage/index.html"
   },
   "files": [
-    "src/"
+    "generators"
   ],
   "repository": {
     "type": "git",
     "url": "git://github.com/kaelzhang/generator-gaia.git"
   },
   "keywords": [
-    "generator-gaia"
+    "generator-gaia",
+    "generator",
+    "yeoman generator",
+    "gaia",
+    "grpc"
   ],
   "engines": {
     "node": ">= 6"
