@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+// option java_multiple_files = true;
+// option java_package = "ai.ost.svc.AppService";
+// option java_outer_classname = "AppServiceProto";
+
+service GreeterService {
+  rpc SayHi (MessageReq) returns (MessageRes) {}
+}
+
+message MessageReq {
+  string name = 1;
+}
+
+message MessageRes {
+  string greetings = 2;
+}

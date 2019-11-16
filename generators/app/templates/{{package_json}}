@@ -1,0 +1,60 @@
+{
+  "name": "{{name}}",
+  "version": "1.0.0",
+  "description": "{{description}}",
+  "main": "src/index.js",
+  "scripts": {
+    "precommit": "npm run lint",
+    "fix": "eslint . --fix",
+    "lint": "eslint .",
+    "pack": "gaia pack",
+    "test:only": "gaia test -- nyc ava --timeout=10s --verbose",
+    "test": "npm run test:only",
+    "test:dev": "npm run test:only && npm run report:dev",
+    "posttest": "npm run report",
+    "report": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "report:open": "open coverage/index.html",
+    "report:dev": "nyc report --reporter=html && npm run report:open",
+    "start": "gaia start",
+    "start:dev": "gaia start --dev",
+    "pub": "gaia publish"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "{{git_clone_url}}"
+  },
+  "keywords": [
+    "{{name}}"
+  ],
+  "engines": {
+    "node": ">= 6"
+  },
+  "ava": {
+    "babel": false,
+    "files": [
+      "test/*.test.js"
+    ]
+  },
+  "author": "{{user}}",
+  "license": "MIT",
+  "bugs": {
+    "url": "{{git_issue_url}}"
+  },
+  "devDependencies": {
+    "ava": "^2.4.0",
+    "codecov": "^3.4.0",
+    "eslint": "^6.6.0",
+    "@ostai/eslint-config": "^3.5.0",
+    "eslint-plugin-import": "^2.18.2",
+    "nyc": "^14.1.1"
+  },
+  "dependencies": {
+    "@ostai/env": "^1.0.0",
+    "gaia": "^3.1.1",
+    "gaia-cli": "^3.0.2"
+  },
+  "gaia": {
+    "protoPath": "proto"
+  }
+}
