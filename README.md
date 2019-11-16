@@ -15,18 +15,42 @@
 
 # generator-gaia
 
-Yeaman generator for gaia
+Yeoman generator to create a Gaia project
 
 ## Install
 
 ```sh
-$ npm i generator-gaia
+$ npm i -g generator-gaia
 ```
 
 ## Usage
 
-```js
-const generator_gaia = require('generator-gaia')
+```sh
+# It is recommanded to clone the empty repo first,
+# `generator-cjs` reads the git remote url and set default prompts values.
+git clone git@github.com:my-name/my-empty-repo.git
+
+cd my-empty-repo
+
+yo gaia
+```
+
+### Run tests on dev env
+
+```sh
+npm run test:dev
+```
+
+### Start server
+
+```sh
+npm run start
+```
+
+Start dev server which will use `.env` as environment variables
+
+```sh
+npm run start:dev
 ```
 
 ## License

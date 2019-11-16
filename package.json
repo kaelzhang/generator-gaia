@@ -1,6 +1,6 @@
 {
   "name": "generator-gaia",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Yeaman generator for gaia",
   "scripts": {
     "test": "NODE_DEBUG=generator-gaia nyc ava --timeout=10s --verbose",
