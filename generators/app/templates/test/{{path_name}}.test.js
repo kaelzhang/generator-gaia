@@ -3,12 +3,13 @@ const test = require('ava')
 const {Client} = require('gaia')
 
 const {GreeterService} = new Client(process.cwd())
-.connect(`localhost:${process.env.SERVICE_PORT}`)
+// GAIA_SERVER_HOST is an env created by gaia-cli
+.connect(process.env.GAIA_SERVER_HOST)
 
 test('SayHi', async t => {
-  const {message} = await GreeterService.SayHi({
+  const {greetings} = await GreeterService.SayHi({
     name: 'World'
   })
 
-  t.is(message, 'Hello World')
+  t.is(greetings, 'Hello World')
 })
